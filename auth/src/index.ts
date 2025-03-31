@@ -10,6 +10,12 @@ import {json} from 'body-parser';
 
 const app = express();
 app.use(json());
+
+app.get('/api/users/currentuser', (req,res)=>{
+
+    res.send("Hi there!");
+});
+
 // app.use(currentUser);
 // app.use(signinRouter);
 // app.use(signoutRouter);
