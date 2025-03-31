@@ -9,10 +9,12 @@ export const errorHandler = (
   next: NextFunction
 ) => {
   if (err instanceof RequestValidationError) {
-    console.log("handling this error as a request validation error");
+    res.status(err.statusCode).send({errors: err.serializeErrors()});
+    return;
   }
   if (err instanceof DatabaseConnectionError) {
-    console.log("handling this error as a db connection error");
+    res.status(err.statusCode).send({errors: err.serializeErrors()});
+    return; // Ensure that the function exits after sending the response
   }
 
   res.status(400).send({
