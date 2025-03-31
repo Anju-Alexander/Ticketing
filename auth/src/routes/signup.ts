@@ -13,7 +13,7 @@ router.post('/api/users/signup', [
       .trim()
       .notEmpty()
       .withMessage('You must supply a password')
-  ], (req: Request,res: Response)=>{
+  ], async (req: Request,res: Response)=>{
 
     const errors = validationResult(req);
     if(!errors.isEmpty()){
