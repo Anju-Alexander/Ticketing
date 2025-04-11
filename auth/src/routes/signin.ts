@@ -1,12 +1,15 @@
 import express, { Request, Response } from "express";
 import jwt from 'jsonwebtoken'
-import { body, validationResult } from "express-validator";
+//import { body, validationResult } from "express-validator";
 import { validateRequest } from '../middlewares/validate-request';
 
 import { User } from "../models/user";
 import { Password } from "../service/password";
 import { BadRequestError } from "../errors/bad-request-error";
 
+const { body, validationResult } = require('express-validator');
+
+//const {body} = require('express-validator')
 const router = express.Router();
 
 router.post(
