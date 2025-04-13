@@ -1,11 +1,11 @@
 import express, { Request, Response } from "express";
 import jwt from 'jsonwebtoken'
 //import { body, validationResult } from "express-validator";
-import { validateRequest } from '../middlewares/validate-request';
+import { validateRequest, BadRequestError } from '@anju102/common';
 
 import { User } from "../models/user";
 import { Password } from "../service/password";
-import { BadRequestError } from "../errors/bad-request-error";
+//import { BadRequestError } from "../errors/bad-request-error";
 
 const { body, validationResult } = require('express-validator');
 

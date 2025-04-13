@@ -1,6 +1,6 @@
 import express from 'express';
-import { currentUser } from '../middlewares/current-user';
-import { requireAuth } from '../middlewares/require-auth';
+import { currentUser, requireAuth } from '@anju102/common';
+//import { requireAuth } from '../middlewares/require-auth';
 
 //import { currentUser } from '../middlewares/current-user';
 //import { requireAuth } from '../middlewares/require-auth';
