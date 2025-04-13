@@ -38,6 +38,8 @@ app.all('*', async (req, res) => {
 });
 
 // Error handler middleware
-app.use(errorHandler);
+//app.use(errorHandler);
+app.use(errorHandler as (err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => void);
+
 
 export {app};
