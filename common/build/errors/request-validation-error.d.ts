@@ -1,14 +1,22 @@
-import { ValidationError } from 'express-validator';
 import { CustomError } from './custom-error';
+type ValidationErr = {
+    msg: string;
+    param: string;
+    location: string;
+    value?: any;
+    type?: string;
+    path?: string;
+};
 export declare class RequestValidationError extends CustomError {
-    errors: ValidationError[];
+    errors: ValidationErr[];
     statusCode: number;
-    constructor(errors: ValidationError[]);
+    constructor(errors: ValidationErr[]);
     serializeErrors(): ({
-        message: any;
-        field: any;
+        message: string;
+        field: string | undefined;
     } | {
-        message: any;
+        message: string;
         field?: undefined;
     })[];
 }
+export {};

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RequestValidationError = void 0;
+//import { ValidationError } from 'express-validator';
 const custom_error_1 = require("./custom-error");
 class RequestValidationError extends custom_error_1.CustomError {
     constructor(errors) {
